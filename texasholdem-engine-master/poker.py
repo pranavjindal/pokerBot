@@ -1,5 +1,5 @@
 #-----------------------------------------------------------#
-# Heads Up Omaha Challange - Starter Bot                    #
+# Texas Hold'em Poker Challange - Starter Bot               #
 #===========================================================#
 #                                                           #
 # Last update: 22 May, 2014                                 #
