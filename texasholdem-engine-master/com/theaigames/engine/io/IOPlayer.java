@@ -55,8 +55,15 @@ public class IOPlayer implements Runnable {
     // processes a line by reading it or writing it
     public void process(String line, String type) throws IOException {
         if (!this.finished) {
-        	switch (type) {
-        	case "input":
+            int type_indicator = 0;
+            if(type=="output"){
+                type_indicator = 1;
+            }else if (type=="error") {
+                type_indicator = 2;
+            }
+
+        	switch (type_indicator) {
+        	case 0:
                 try {
             		this.inputStream.write(line + "\n");
             		this.inputStream.flush();
@@ -65,10 +72,10 @@ public class IOPlayer implements Runnable {
                 }
                 addToDump(line + "\n");
         		break;
-        	case "output":
+        	case 1:
     //    		System.out.println("out: " + line);
         		break;
-        	case "error":
+        	case 2:
     //    		System.out.println("error: " + line);
         		break;
         	}
